@@ -6,20 +6,67 @@
     <title>Shifra,My virtual assistant </title>
     <link rel="stylesheet" href="robo.jpg">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body><!-- Place these at the top of your <body> -->
+<div class="floating-sphere sphere1"></div>
+<div class="floating-sphere sphere2"></div>
+<div class="floating-sphere sphere3"></div>
+<div class="floating-sphere sphere4"></div>
     <img src="robo.jpg" alt="logo" id="logo">
     <h1>I'm <span id="name">Shifra</span>,your <span id="va">virtual Assiatant</span></h1>
+    <h1><CENTER>I'M Created by  <span id="SU">SHUBHRAJ</span></h1></CENTER>
     
     <p id="description">I can help you with your daily tasks, answer questions, and provide information.</p>
     <div class="container">
+        
 
     <img src="voice.gif"alt="voice" id="voice">
        
     <p id="text">Click the button below to start speaking with me.</p>
     <button id="button"><img src="mic.svg" alt="mic"><span id="content">Click here for talk to me </span></button>
+    
+    <audio id="musicPlayer" controls style="display:none;">
+  <source src="shikayat.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
        
 
     <script src="script.js"></script>
 </body>
-</html>
+</html><!-- Add this inside your <body> tag in index.html -->
+<div id="3d-container" style="width:100vw; height:100vh; position:fixed; top:0; left:0; z-index:-1;"></div>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+<script>
+    // 3D background with rotating cube
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('3d-container').appendChild(renderer.domElement);
+
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshNormalMaterial();
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    camera.position.z = 3;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+</script>

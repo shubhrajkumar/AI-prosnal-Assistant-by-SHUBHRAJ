@@ -8,46 +8,141 @@
 body{
     width: 100%;
     height: 100%;
-    background-color: #000007;
+    background-color: #480fe4;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
     flex-direction: column;
 }
-
-#logo{
-    width: 300px;
+#logo {
+    width: 350px;
+    background: wheat; /* Example: white background */
+    border: 5px solid #129dee; /* Example: blue border */
+    border-radius: 50%;
+    padding: 10px; /* Optional: space between image and border */
+    box-shadow: 0 4px 16px rgba(0, 191, 255, 0.2);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    align-items: center;
+    /* Optional: subtle glow */
 }
+  /* Optional: subtle glow */
+
+#logo:hover {
+    filter: drop-shadow(0 0 20px #fffdef);
+    box-shadow:
+        0 0 20px 10px #129dee,
+        0 0 40px 20px #ec5c08;
+    transform: scale(1.05) rotateY(1deg) rotateX(2deg);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
 h1{
     color:aqua;
     font-family: "Playfair Display", serif;
+    align-items: center;
 
 }
 p{
-    color: rgb(128, 230, 11);
-    
-    font-size: 20px;
+    font-family: "Playfair Display", serif;
+    font-weight: normal;
+    text-shadow: 2px 2px 10px rgb(225, 234, 235);
+    font-size: 1.2rem;
+    color: rgb(209, 217, 219);
     text-align: center;
-   
+    background: linear-gradient(to right, rgb(6, 64, 223), rgb(12, 151, 82));
+    padding: 20px;  
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgb(216, 36, 141), 2px 2px 10px rgb(12, 151, 82);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    transition: all 0.3s ease-in-out;
+    grid-area: 100px;
+    border-radius: 50PX;
+    align-items: center;
+    
+}
+#text{
+    font-family: "Playfair Display", serif;
+    font-weight: normal;
+    text-shadow: 2px 2px 10px rgb(214, 49, 8);
+    font-size: 1.2rem;
+    color: rgb(224, 64, 64);
+    text-align: center;
+    background: linear-gradient(to right, rgb(6, 64, 223), rgb(12, 151, 82));
+    padding: 20px;  
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgb(6, 64, 223), 2px 2px 10px rgb(12, 151, 82);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    transition: all 0.3s ease-in-out;
+    grid-area: 100px;
+    border-radius: 50PX;
+    align-items: center;
 }
 #name{
     color: rgb(129, 170, 207);
    font-size : 50px;
+   align-items: center ;
+   font-style: oblique;
 }
 #va{
     color: palevioletred;
     font-size: 50px;
+    align-items: center;
 }
+#SU {
+    color: palevioletred;
+    font-size: 50px;
+    align-self: start;
+   font-family: "Playfair Display", serif;
+    font-style: oblique;
+}
+#SU:hover {
+    filter: drop-shadow(0 0 20px #fffdef);
+    box-shadow:
+        0 0 20px 5px #129dee,
+        0 0 40px 10px #ec5c08;
+    transform: scale(1.05) rotateY(10deg) rotateX(5deg);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
 #voice{
     width: 300px;
     display: none;
 }
 button{
-    width: 150%;
+    width: 100%;
     background: linear-gradient(to right,rgb(120, 149, 226),rgb(236, 92, 8));
     padding: 10px;
     display: flex;
+    align-items: left;
+    justify-content: center ;
+    grid-area: 10px ;
+    font-size: 25px;
+    border-radius: 50px;
+    color: rgb(253, 253, 253);
+    box-shadow: 2px 2px 10px rgb(120, 149, 226),2px 2px 10px rgb(236, 92, 8);
+    border: none;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;    
+    align-items: left;
+}
+
+button:hover{
+     box-shadow: 2px 2px 20px rgb(120, 149, 226),2px 2px 2cap rgb(236, 92, 8);
+     letter-spacing: 1px;
+
+}
+#voice{
+    width: 400px;
+    display: none;
+    background: linear-gradient(to right,rgb(120, 149, 226),rgb(236, 92, 8));
+    padding: 10px;
+    display: none;
     align-items: center;
     justify-content: center;
     grid-area: 10px ;
@@ -59,9 +154,99 @@ button{
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 }
-
-button:hover{
-     box-shadow: 2px 2px 20px rgb(120, 149, 226),2px 2px 2cap rgb(236, 92, 8);
-     letter-spacing: 1px;
-
+#voice:hover {
+    filter: drop-shadow(0 0 20px #fffdef);
+    box-shadow:
+        0 0 20px 5px #129dee,
+        0 0 40px 10px #ec5c08;
+    transform: scale(1.05) rotateY(10deg) rotateX(5deg);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}/* 3D animated background */
+body {
+    /* ...existing code... */
+    background: linear-gradient(135deg, #cc2867 0%, #07a1dd 100%);
+    min-height: 100vh;
+    perspective: 100px;
+    overflow-x: hidden;
+    position: relative;
 }
+
+
+/* 3D floating card effect for main content */
+#main-content, .main-3d-card {
+    background: rgba(255,255,255,0.07);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), 0 1.5px 10px 2px #129dee;
+    backdrop-filter: blur(8px);
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 40px 30px;
+    margin: 30px 0;
+    transform: rotateY(-8deg) rotateX(4deg);
+    transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s;
+}
+#main-content:hover, .main-3d-card:hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+    box-shadow: 0 16px 48px 0 #129dee, 0 4px 32px 0 #ec5c08;
+}
+
+/* 3D animated floating spheres */
+@keyframes float {
+    0% { transform: translateY(0) scale(1);}
+    50% { transform: translateY(-30px) scale(1.1);}
+    100% { transform: translateY(0) scale(1);}
+}
+.floating-sphere {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.25;
+    filter: blur(2px);
+    animation: float 5s ease-in-out infinite;
+    z-index: 0;
+}
+.sphere1 { width: 180px; height: 180px; background: #ec5c08; left: 5vw; top: 10vh; animation-delay: 0s;}
+.sphere2 { width: 120px; height: 120px; background: #129dee; right: 10vw; top: 30vh; animation-delay: 1.5s;}
+.sphere3 { width: 90px; height: 90px; background: #fffdef; left: 30vw; bottom: 10vh; animation-delay: 2.5s;}
+.sphere4 { width: 60px; height: 60px; background: #0f0; right: 20vw; bottom: 15vh; animation-delay: 3.5s;}
+
+/* 3D text effect for headings */
+h1, #name, #va, #SU {
+    text-shadow:
+        0 2px 8px #129dee,
+        0 4px 16px #ec5c08,
+        0 1px 0 #fffdef;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 3rem;
+    transform: perspective(400px) rotateX(8deg);
+    transition: transform 0.3s;
+}
+h1:hover, #name:hover, #va:hover, #SU:hover {
+    transform: perspective(400px) rotateX(0deg) scale(1.05);
+}
+
+/* Glassmorphism for logo */
+#logo {
+    /* ...existing code... */
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 8px 32px 0 #129dee, 0 1.5px 10px 2px #ec5c08;
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(255,255,255,0.18);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+    #main-content, .main-3d-card, p, #text {
+        padding: 15px 5px;
+        font-size: 1rem;
+        border-radius: 18px;
+    }
+    h1, #name, #va, #SU {
+        font-size: 2rem;
+    }
+    #logo {
+        width: 180px;
+    }
+}
+
+/* Add this to your HTML for the floating spheres (see below) */
